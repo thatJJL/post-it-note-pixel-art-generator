@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--
-index2
-Clear gird clears instead of deleting
-Delete grid functionality moved to its own button - hidden
+index3
+Gooey colour menu quick select - didn't work
+Quick colour slection WIP
 -->
 
 <html lang="en">
@@ -16,6 +16,57 @@ Delete grid functionality moved to its own button - hidden
     />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css" />
+	
+	
+	<style>
+	/*
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+*/
+
+.dropup {
+  position: relative;
+  display: inline-block;
+}
+
+.dropup-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  /*min-width: 160px;*/
+  /*max-height: 40px;*/
+  bottom: 40px;
+  z-index: 1;
+}
+
+.dropup-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropup-content a:hover {background-color: #ccc}
+
+.dropup:hover .dropup-content {
+  display: block;
+}
+
+/*
+.dropup:hover .dropbtn {
+  background-color: #2980B9;
+}
+*/
+</style>
+	
+	
+	
+	
   </head>
   <body>
     <div class="wrapper">
@@ -36,7 +87,19 @@ Delete grid functionality moved to its own button - hidden
           <button id="submit-grid">Create Grid</button>
           <button id="clear-grid">Clear Grid</button>
           <button hidden id="del-grid">Del. Grid</button>
+		  
           <input type="color" id="color-input" />
+          
+		  <div class="dropup">
+			  <input type="color" class="dropbtn" id="color-input" />
+			  <!--<button class="dropbtn">Dropup</button>-->
+			  <div class="dropup-content">
+				<a href="#">col1</a>
+				<a href="#">col2</a>
+				<a href="#">col3</a>
+			  </div>
+			</div>
+		
           <button id="erase-btn">Erase</button>
           <button id="paint-btn">Paint</button>
         </div>
@@ -46,5 +109,30 @@ Delete grid functionality moved to its own button - hidden
     </div>
     <!-- Script -->
     <script src="script.js"></script>
+	
+
+	
+	
+	
+<!--	
+	<div class="dropup">
+  <button class="dropbtn">Dropup</button>
+  <div class="dropup-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+-->
+	
+	
+	
+
+
+
+	
+	
   </body>
 </html>
+
+

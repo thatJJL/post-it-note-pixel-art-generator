@@ -1,9 +1,11 @@
-//script1
+//script2
+
 
 //Initial references
 let container = document.querySelector(".container");
 let gridButton = document.getElementById("submit-grid");
 let clearGridButton = document.getElementById("clear-grid");
+let delGridButton = document.getElementById("del-grid");
 let gridWidth = document.getElementById("width-range");
 let gridHeight = document.getElementById("height-range");
 let colorButton = document.getElementById("color-input");
@@ -11,6 +13,12 @@ let eraseBtn = document.getElementById("erase-btn");
 let paintBtn = document.getElementById("paint-btn");
 let widthValue = document.getElementById("width-value");
 let heightValue = document.getElementById("height-value");
+
+
+//Intial variables
+onloadGridWidth = 10;
+onloadGridHeight = 10;
+
 
 //Events object
 let events = {
@@ -28,9 +36,11 @@ let events = {
 
 let deviceType = "";
 
+
 //Initially draw and erase would be false
 let draw = false;
 let erase = false;
+
 
 //Detect touch device
 const isTouchDevice = () => {
@@ -46,6 +56,7 @@ const isTouchDevice = () => {
 };
 
 isTouchDevice();
+
 
 //Create Grid
 gridButton.addEventListener("click", () => {
@@ -121,32 +132,50 @@ function checker(elementId) {
   });
 }
 
-//Clear Grid
-clearGridButton.addEventListener("click", () => {
+
+//Delete Grid
+delGridButton.addEventListener("click", () => {
   container.innerHTML = "";
 });
+
+//Actually Clear Grid
+clearGridButton.addEventListener("click", () => {
+  gridButton.click(); //Just simulates the event which regenerates the grid
+});
+
+
 //Erase Button
 eraseBtn.addEventListener("click", () => {
   erase = true;
 });
+
 
 //Paint button
 paintBtn.addEventListener("click", () => {
   erase = false;
 });
 
+
 //Display grid width and height
 gridWidth.addEventListener("input", () => {
   widthValue.innerHTML =
-    gridWidth.value < 9 ? `0${gridWidth.value}` : gridWidth.value;
+    gridWidth.value <= 9 ? `0${gridWidth.value}` : gridWidth.value;
 });
+
 
 gridHeight.addEventListener("input", () => {
   heightValue.innerHTML =
-    gridHeight.value < 9 ? `0${gridHeight.value}` : gridHeight.value;
+    gridHeight.value <= 9 ? `0${gridHeight.value}` : gridHeight.value;
 });
 
+
 window.onload = () => {
-  gridWidth.value = 0;
-  gridHeight.value = 0;
+	document.getElementById("width-value").innerHTML = onloadGridWidth;
+	document.getElementById("height-value").innerHTML = onloadGridWidth;
+	gridWidth.value = onloadGridWidth;
+	gridHeight.value = onloadGridHeight;
+	
+	//gridButton.dispatchEvent("click");
+	//document.getElementById('submit-grid').click();
+	gridButton.click();
 };
