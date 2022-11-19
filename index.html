@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <!--
-index1
+index2
+Clear gird clears instead of deleting
+Delete grid functionality moved to its own button - hidden
 -->
+
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pixel Art Generator</title>
+    <title>Post-it Note / Pixel Art Designer</title>
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap"
@@ -20,24 +23,26 @@ index1
         <div class="opt-wrapper">
           <div class="slider">
             <label for="width-range">Grid Width</label>
-            <input type="range" id="width-range" min="1" max="35" />
+            <input type="range" id="width-range" min="1" max="32" />
             <span id="width-value">00</span>
           </div>
           <div class="slider">
             <label for="height-range">Grid Height</label>
-            <input type="range" id="height-range" min="1" max="35" />
+            <input type="range" id="height-range" min="1" max="32" />
             <span id="height-value">00</span>
           </div>
         </div>
         <div class="opt-wrapper">
           <button id="submit-grid">Create Grid</button>
           <button id="clear-grid">Clear Grid</button>
+          <button hidden id="del-grid">Del. Grid</button>
           <input type="color" id="color-input" />
           <button id="erase-btn">Erase</button>
           <button id="paint-btn">Paint</button>
         </div>
       </div>
       <div class="container"></div>
+      <!--<div class="container" style="margin-left:auto;margin-right:auto;"></div>-->
     </div>
     <!-- Script -->
     <script src="script.js"></script>
